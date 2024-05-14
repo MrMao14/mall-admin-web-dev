@@ -5,7 +5,7 @@
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
         <img class="user-avatar" :src="avatar"
-             onerror="this.src='http://localhost:32776/mall/20240514/Snipaste_2024-05-14_11-03-25.png';onerror = null;"
+             @error="loadDefaultImg($event)"
              alt="无"/>
         <i class="el-icon-caret-bottom"></i>
       </div>
@@ -27,6 +27,7 @@
 import {mapGetters} from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import defaultImg from '@/assets/images/default_avatar.png';
 
 export default {
   components: {
@@ -40,6 +41,9 @@ export default {
     ])
   },
   methods: {
+    loadDefaultImg(e) {
+      e.target.src = defaultImg;
+    },
     toggleSideBar() {
       this.$store.dispatch('ToggleSideBar')
     },

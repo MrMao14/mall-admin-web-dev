@@ -4,7 +4,9 @@
     <breadcrumb></breadcrumb>
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
-        <img class="user-avatar" :src="avatar">
+        <img class="user-avatar" :src="avatar"
+             onerror="this.src='http://localhost:32776/mall/20240514/Snipaste_2024-05-14_11-03-25.png';onerror = null;"
+             alt="无"/>
         <i class="el-icon-caret-bottom"></i>
       </div>
       <el-dropdown-menu class="user-dropdown" slot="dropdown">
@@ -22,7 +24,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 
@@ -55,32 +57,38 @@ export default {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
+
   .hamburger-container {
     line-height: 58px;
     height: 50px;
     float: left;
     padding: 0 10px;
   }
+
   .screenfull {
     position: absolute;
     right: 90px;
     top: 16px;
     color: red;
   }
+
   .avatar-container {
     height: 50px;
     display: inline-block;
     position: absolute;
     right: 35px;
+
     .avatar-wrapper {
       cursor: pointer;
       margin-top: 5px;
       position: relative;
+
       .user-avatar {
         width: 40px;
         height: 40px;
         border-radius: 10px;
       }
+
       .el-icon-caret-bottom {
         position: absolute;
         right: -20px;

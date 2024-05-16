@@ -48,7 +48,7 @@ export default {
       },
       useOss: false, //使用oss->true;使用MinIO->false
       ossUploadUrl: 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com',
-      minioUploadUrl: 'http://localhost:9111' + '/minio/upload',
+      minioUploadUrl: process.env.BASE_API + '/minio/upload',
     }
   },
   methods: {
